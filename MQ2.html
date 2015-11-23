@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>自适应布局</title>
+    <style>
+        body{
+            margin:20px 0;
+        }
+        #center{
+            width:960px;
+            margin:0 auto;
+        }
+        #left{
+            width:740px;
+            float:left;
+        }
+        p{
+            line-height: 600px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 2em;
+            margin: 0 0 20px 0;
+            color: white;
+        }
+        #left-z{
+            width:200px;
+            float:left;
+            background: #606aff;
+        }
+        #left-y{
+            width: 520px;
+            float: right;
+            background: pink;
+        }
+        #right{
+            width: 200px;
+            float:right;
+            background: #39d538;
+        }
+        /*大于1000*/
+        @media screen and (min-width:1000px){
+            #center{
+                width:1000px;
+            }
+            #left{
+                width: 780px;
+            }
+            #left-z{
+                width:200px;
+            }
+            #left-y{
+                width: 560px;
+            }
+            #right {
+                width: 200px;
+            }
+        }
+        /*最大不超过999 最小不超过640*/
+        @media screen and (min-width:640px) and (max-width: 999px){
+            #center{
+                width:640px;
+            }
+            p{
+                line-height: 430px;
+            }
+            #left{
+                width: 640px;
+            }
+            #left-z{
+                width:200px;
+            }
+            #left-y{
+                width: 420px;
+            }
+            #right{
+                width: 100%;
+                line-height:150px;
+                float:none;
+                clear:both;
+            }
+        }
+        /*最大不超过639*/
+        @media screen and (max-width: 639px){
+            #center{
+                width:100%;
+            }
+            p{
+                line-height: 200px;
+            }
+            #left{
+                width: 100%;
+                float:none;
+            }
+            #left-z{
+                width:100%;
+                float:none;
+            }
+            #left-y{
+                width: 100%;
+                float:none;
+            }
+            #right{
+                width: 100%;
+                line-height:200px;
+                float:none;
+                clear:both;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="center">
+        <div id="left">
+            <p id="left-y">Center</p>
+            <p id="left-z">Left</p>
+        </div>
+        <p id="right">right</p>
+    </div>
+</body>
+</html>
